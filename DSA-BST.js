@@ -167,3 +167,14 @@ at the end of the tree. I believe the runtime is Big O(n) because it still has t
 all the branches of the tree to collect the values.
 
 */
+
+function findHeight(tree) {
+  let count = 0;
+  if (!tree) {
+    return 0;
+  }
+  if ((tree.left && tree.right) || tree.right || tree.left) {
+    count++;
+    findHeight(tree.left);
+  }
+}
